@@ -4,29 +4,58 @@ import axios from "axios";
 const ProductDetails = () => {
 
     const [product,setProduct] = useState([])
+    const [errorMessage, setErrorMessage] = useState("")
+
     const Id = useParams()
+
     const productId = Id.productId;
-    console.log(productId)
+ 
 
     const fetchingSpecificProduct = async()=>{
-        const responce = await axios.get("https://fakestoreapi.com/products/" + productId)
-        console.log("responce in fetching specific",responce)
-        setProduct(responce.data)
+        const response = await axios.get("https://fakestoreapi.com/products/" + productId)
+        console.log("responce in fetching specific",response)
+
+        if(response.data){
+            setProduct(response.data)
+            setErrorMessage("")
+        }
+        else {
+            if(productId )
+                {
+                    setErrorMessage("invalid Product Id")
+                    console.log(errorMessage)
+            }
+                else{
+                setErrorMessage("You didn't pass an id")
+                console.log( errorMessage)
+            }
+        }
+
+
+       
+
 
     }
 
     useEffect(()=>{
         fetchingSpecificProduct();
-    },[])
+    },[errorMessage])
 
     return (<>
-        {(product?<>
-        <h1>{product.title}</h1>
-        <h2>{product.description}</h2>
-        <img src={product.image} alt={product.title} />
+
+        {(productId?<>
+            {errorMessage?<>
+        <h1>{errorMessage}</h1>
         </>
+        :
+        <><h1>{product.title}</h1>
+        <h2>{product.description}</h2>
+        <img src={product.image} alt={product.title} /></>}
+        
+        </>     
+         
             :
-            <><h1>No Product Found</h1></>)}
+            <><h1>{errorMessage}</h1></>)}
     </>  );
 }
  
