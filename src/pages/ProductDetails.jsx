@@ -20,7 +20,7 @@ const ProductDetails = () => {
             setErrorMessage("")
         }
         else {
-            if(productId )
+            if(productId)
                 {
                     setErrorMessage("invalid Product Id")
                     console.log(errorMessage)
