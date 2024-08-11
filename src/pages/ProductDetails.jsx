@@ -30,16 +30,11 @@ const ProductDetails = () => {
                 console.log( errorMessage)
             }
         }
-
-
-       
-
-
     }
 
     useEffect(()=>{
         fetchingSpecificProduct();
-    },[errorMessage])
+    },[])
 
     return (<>
 
@@ -53,7 +48,6 @@ const ProductDetails = () => {
         <img src={product.image} alt={product.title} /></>}
         
         </>     
-         
             :
             <><h1>{errorMessage}</h1></>)}
     </>  );
