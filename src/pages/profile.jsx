@@ -81,7 +81,6 @@ const Profile = () => {
       ) : (
         <>
           <center>
-            {" "}
             <h1 className="text-lg font-bold mt-4">You Must log in first...</h1>
           </center>
         </>

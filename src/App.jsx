@@ -8,7 +8,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./index.css";
 import SignUp from "./pages/SignUp";
-import Profile from "./pages/profile";
+
+import SignIn from "./pages/SignIn";
+import Profile from "./pages/Profile";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +28,7 @@ function App() {
             element={<ProductDetails />}
           />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>

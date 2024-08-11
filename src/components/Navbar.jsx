@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Home from "../pages/Home";
 import SignUp from "../pages/SignUp";
+import SignIn from "../pages/SignIn";
+import Profile from "../pages/Profile";
 
 const Navbar = () => {
   return (
@@ -20,10 +22,10 @@ const Navbar = () => {
           <Link to="/SignUp" element={<SignUp />}>
             <li className="text-white mx-9">Sign Up</li>
           </Link>
-          <Link to="/" element={<Home />}>
+          <Link to="/signin" element={<SignIn />}>
             <li className="text-white mx-9">Sign In</li>
           </Link>
-          <Link to="/" element={<Home />}>
+          <Link to="/profile" element={<Profile />}>
             <li className="text-white mx-9">Account</li>
           </Link>
         </ul>

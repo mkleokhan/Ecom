@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 
-const SignUp = () => {
+const SignIn = () => {
   const defaultValues = {
     name: "",
     email: "",
@@ -27,7 +27,7 @@ const SignUp = () => {
     <>
       <div>
         <h1 className="text-lg font-bold mt-4">
-          <center>Sign Up here </center>
+          <center>Sign In here </center>
         </h1>
         <Formik
           initialValues={defaultValues}
@@ -35,19 +35,6 @@ const SignUp = () => {
           onSubmit={handleSubmit}
         >
           <Form className="w-full">
-            <label htmlFor="name">Name</label>
-            <Field
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Name"
-            />
-            <ErrorMessage
-              name="name"
-              component="div"
-              className="text-red-500"
-            />
             <label htmlFor="email">Email</label>
             <Field
               name="email"
@@ -63,18 +50,6 @@ const SignUp = () => {
             />
             <label htmlFor="phone">Phone</label>
 
-            <Field
-              name="phone"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="tel"
-              id="phone"
-              placeholder="phone number"
-            />
-            <ErrorMessage
-              name="phone"
-              component="div"
-              className="text-red-500"
-            />
             <label htmlFor="password">Password</label>
             <Field
               name="password"
@@ -88,20 +63,7 @@ const SignUp = () => {
               component="div"
               className="text-red-500"
             />
-            <label htmlFor="dob">Date of Birth</label>
-            <Field
-              name="dob"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="date"
-              id="dob"
-            />
-            <ErrorMessage name="dob" component="div" className="text-red-500" />
-            <label htmlFor="profilePic">Profile Picture</label>
-            <Field
-              name="profilePic"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="file"
-            />
+
             <button
               type="submit"
               className="mt-2 ml-1 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -115,4 +77,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;
