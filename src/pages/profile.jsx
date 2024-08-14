@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, SetUser] = useState("Muhammad Kamran");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/signin");
+    }
+  }, [isLoggedIn]);
   return (
     <>
       <center>
@@ -30,7 +38,9 @@ const Profile = () => {
         <>
           <div>
             <h1 className="text-lg font-bold mt-4">
-              <center>Welcome {user} </center>
+              <center>
+                Welcome {user}, you can update your profile here...{" "}
+              </center>
             </h1>
             <form className="w-ful">
               <label htmlFor="name">Name</label>
@@ -72,7 +82,10 @@ const Profile = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="file"
               />
-              <button className="mt-2 ml-1 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button
+                type="submit"
+                className="mt-2 ml-1 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Button
               </button>
             </form>
@@ -80,9 +93,13 @@ const Profile = () => {
         </>
       ) : (
         <>
-          <center>
-            <h1 className="text-lg font-bold mt-4">You Must log in first...</h1>
-          </center>
+          {
+            <center>
+              <h1 className="text-lg font-bold mt-4">
+                You Must log in first...
+              </h1>
+            </center>
+          }
         </>
       )}
     </>

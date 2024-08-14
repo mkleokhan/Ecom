@@ -13,7 +13,7 @@ const SignIn = () => {
 
   const validationSchema = yup.object().shape({
     name: yup.string().required("Enter your name"),
-    email: yup.string().required("Enter your email"),
+    email: yup.string().required("Enter your email").email(),
     phone: yup.string().required("Enter your phone number"),
     password: yup
       .string()

@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp";
 
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
+import MainLayout from "./components/MainLayout";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,18 +19,73 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/products" element={<Products />} />
+          <Route
+            path="/"
+            element={
+              <MainLayout>
+                <Home />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/categories"
+            element={
+              <MainLayout>
+                <Categories />
+              </MainLayout>
+            }
+          />
+          <Route>
+            <Route
+              path="/products"
+              element={
+                <MainLayout>
+                  <Products />
+                </MainLayout>
+              }
+            />
+            <Route
+              path="/products/:category"
+              element={
+                <MainLayout>
+                  <Products />
+                </MainLayout>
+              }
+            />
+          </Route>
           <Route
             path="/product-details/:productId?"
-            element={<ProductDetails />}
+            element={
+              <MainLayout>
+                <ProductDetails />
+              </MainLayout>
+            }
           />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/signup"
+            element={
+              <MainLayout>
+                <SignUp />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <MainLayout>
+                <SignIn />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <MainLayout>
+                <Profile />
+              </MainLayout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
