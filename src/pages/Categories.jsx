@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import Products from "./Products";
 import ProductCard from "../components/ProductCard";
+
 const Categories = () => {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -29,20 +30,19 @@ const Categories = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold">Categories</h1>
-      {categories.map((element) => {
-        return (
-          <>
-            <Link
-              className="flex mt-4"
-              to={`/products/${encodeURIComponent(element)}`}
-              element={<Products />}
-            >
-              {element}
-            </Link>
-          </>
-        );
-      })}
+      <h1 className="text-3xl font-bold mb-4">Categories</h1>
+      <div className="flex flex-wrap gap-4">
+        {categories.map((category) => (
+          <Link
+            key={category}
+            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+            to={`/products/${encodeURIComponent(category)}`}
+          >
+            {category}
+          </Link>
+        ))}
+      </div>
+      <Products />
     </>
   );
 };

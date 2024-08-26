@@ -2,33 +2,37 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-
+import Categories from "./Categories";
+import Button from "@mui/material/Button";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
   const category = useParams().category;
+  const productid = useParams().id;
 
   const fetchProducts = async () => {
     const responce = await axios.get("https://fakestoreapi.com/products");
     if (responce.status === 200) {
       const data = responce.data;
+      console.log("Responce.data= ", data);
       setProducts(data);
+      setSearchResults(data);
 
       // setProducts(data);
     }
   };
-  console.log("printing category", category);
+
   const hanldeSearch = (e) => {
+    // alert("clicked....");
+    console.log(e.target.value);
     const results = products.filter((element) => {
       if (element.title.toLowerCase().includes(e.target.value.toLowerCase())) {
         return true;
       }
     });
-    setProducts(results);
+    setSearchResults(results);
   };
-
-  console.log(products);
 
   useEffect(() => {
     fetchProducts();
@@ -36,8 +40,6 @@ const Products = () => {
 
   return (
     <>
-      <h1>Product page</h1>
-
       <input
         type="text"
         className="form-control mt-4"
@@ -48,8 +50,7 @@ const Products = () => {
         <div className="flex flex-wrap -mx-4">
           {category ? (
             <>
-              <h1>Category Found</h1>
-              {products.map((element) => {
+              {searchResults.map((element) => {
                 if (element.category === category)
                   return (
                     <ProductCard
@@ -67,7 +68,7 @@ const Products = () => {
             </>
           ) : (
             <>
-              {products.map((element) => {
+              {searchResults.map((element) => {
                 return (
                   <ProductCard
                     title={element.title}
@@ -78,6 +79,7 @@ const Products = () => {
                     clickHandler={() => {
                       navigate(`/product-details/${element.id}`);
                     }}
+                    button={<Button>Add to Cart</Button>}
                   />
                 );
               })}

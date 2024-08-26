@@ -5,17 +5,15 @@ import Categories from "./pages/Categories";
 import ErrorPage from "./pages/ErrorPage";
 import ProductDetails from "./pages/ProductDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import "./index.css";
 import SignUp from "./pages/SignUp";
 
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
+import About from "./pages/About";
 import MainLayout from "./components/MainLayout";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <BrowserRouter>
@@ -36,6 +34,14 @@ function App() {
               </MainLayout>
             }
           />
+          <Route
+            path="/about"
+            element={
+              <MainLayout>
+                <About />
+              </MainLayout>
+            }
+          ></Route>
           <Route>
             <Route
               path="/products"
@@ -83,6 +89,14 @@ function App() {
             element={
               <MainLayout>
                 <Profile />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/*"
+            element={
+              <MainLayout>
+                <ErrorPage />
               </MainLayout>
             }
           />

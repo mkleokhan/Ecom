@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@mui/material/Button";
 
 const ProductCard = (props) => {
   return (
@@ -23,6 +24,12 @@ const ProductCard = (props) => {
         <div className="p-4 bg-gray-100">
           <h1 className="text-2xl font-bold text-gray-900">${props.price}</h1>
         </div>
+        <Button
+          className="flex items-center px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600"
+          variant="contained"
+        >
+          Add to Cart
+        </Button>
       </div>
     </div>
   );
