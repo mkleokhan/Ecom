@@ -42,7 +42,7 @@ const Categories = () => {
           </Link>
         ))}
       </div>
-      <Products />
+      {/* <Products /> */}
     </>
   );
 };

@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import Categories from "./Categories";
-import Button from "@mui/material/Button";
+import { addToCart } from "../Redux/Cart/cartActions";
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+
   const navigate = useNavigate();
   const category = useParams().category;
-  const productid = useParams().id;
 
   const fetchProducts = async () => {
     const responce = await axios.get("https://fakestoreapi.com/products");
@@ -32,6 +32,9 @@ const Products = () => {
       }
     });
     setSearchResults(results);
+  };
+  const handleAddToCart = (products) => {
+    dispatch(addToCart(products)); // Dispatch add to cart action
   };
 
   useEffect(() => {
@@ -72,14 +75,16 @@ const Products = () => {
                 return (
                   <ProductCard
                     title={element.title}
-                    key={element.id}
+                    id={element.id}
                     decription={element.description}
                     price={element.price}
                     imageUrl={element.image}
                     clickHandler={() => {
                       navigate(`/product-details/${element.id}`);
+                      <button onClick={() => handleAddToCart(products)}>
+                        Add to Cart
+                      </button>;
                     }}
-                    button={<Button>Add to Cart</Button>}
                   />
                 );
               })}

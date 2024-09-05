@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
+import Cart from "./pages/Cart";
 import MainLayout from "./components/MainLayout";
 
 function App() {
@@ -92,6 +93,16 @@ function App() {
               </MainLayout>
             }
           />
+
+          <Route
+            path="/cart"
+            element={
+              <MainLayout>
+                <Cart />
+              </MainLayout>
+            }
+          />
+
           <Route
             path="/*"
             element={
