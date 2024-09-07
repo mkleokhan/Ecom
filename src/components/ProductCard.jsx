@@ -35,13 +35,13 @@ const ProductCard = (props) => {
           </p>
 
           <div className="flex items-center justify-between">
-            <span className="mt-4 text-lg font-bold text-gray-900 dark:text-white">
+            <span className="mt-4 text-sm font-bold text-gray-900 dark:text-white mr-3">
               ${props.price}
             </span>
             <Button
               variant="contained"
-              className="mt-4"
-              onClick={props.handleAddToCart}
+              className="mt-4 ml-5 py-0 px-4 "
+              onClick={handleAddToCart}
             >
               Add to cart
             </Button>

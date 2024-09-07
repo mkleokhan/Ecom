@@ -64,7 +64,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mt-10">
         <div className="ml-0">
           <h1 className="font-impact text-4xl">Our Values</h1>
         </div>
@@ -82,7 +82,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-5 mt-5">
+      <div className="container grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-5 mt-5">
         <div className="rounded-3xl bg-slate-400 p-4">
           <h1 className="font-mono text-3xl">Quality</h1>
           <p>

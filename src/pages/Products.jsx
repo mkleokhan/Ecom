@@ -81,9 +81,6 @@ const Products = () => {
                     imageUrl={element.image}
                     clickHandler={() => {
                       navigate(`/product-details/${element.id}`);
-                      <button onClick={() => handleAddToCart(products)}>
-                        Add to Cart
-                      </button>;
                     }}
                   />
                 );
