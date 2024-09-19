@@ -7,9 +7,7 @@ import ProductDetails from "./pages/ProductDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import SignUp from "./pages/SignUp";
-
 import SignIn from "./pages/SignIn";
-import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import MainLayout from "./components/MainLayout";
@@ -82,14 +80,6 @@ function App() {
             element={
               <MainLayout>
                 <SignIn />
-              </MainLayout>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <MainLayout>
-                <Profile />
               </MainLayout>
             }
           />
