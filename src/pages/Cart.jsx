@@ -96,10 +96,12 @@ const Cart = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+    <div className="max-w-7xl mx-auto p-14">
       <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <center>
+          <h1 className="font-extrabold">Your cart is empty.</h1>
+        </center>
       ) : (
         <div className="bg-white shadow-md rounded-lg p-6">
           <ul>

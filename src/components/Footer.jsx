@@ -5,7 +5,7 @@ const Footer = () => {
     <>
       <center>
         {" "}
-        <footer className="bg-white dark:bg-gray-900 border">
+        <footer className="bg-white dark:bg-gray-900 border mb-0">
           <div className="mx-auto w-full max-w-screen-xl">
             {/* Footer Grid */}
             <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 gap-8 px-16 py-4 lg:py-4 ">
@@ -94,8 +94,8 @@ const Footer = () => {
           </div>
 
           {/* Footer Bottom Section */}
-          <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-            <span className="text-sm text-gray-500 dark:text-gray-300 text-center">
+          <div className="px-4 py-6 bg-blue-900 dark:bg-gray-700 flex items-center justify-center">
+            <span className="text-sm text-white dark:text-white text-center">
               © 2024{" "}
               <a
                 href="https://www.github.com/mkleokhan"

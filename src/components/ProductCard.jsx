@@ -20,7 +20,7 @@ const ProductCard = (props) => {
   // console.log(handleAddToCart());
   return (
     <div className="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-      <div className="bg-white shadow-md rounded-lg dark:bg-gray-800 dark:border-gray-700">
+      <div className="bg-slate-500 shadow-md rounded-3xl dark:bg-gray-800 dark:border-gray-700">
         <img
           className="w-full h-48 object-contain"
           src={props.imageUrl}
@@ -28,14 +28,14 @@ const ProductCard = (props) => {
         />
         <div className="px-5 py-5">
           <p
-            className="text-gray-900 font-oswald text-lg tracking-tight dark:text-white cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap"
+            className="text-white font-oswald text-lg tracking-tight dark:text-white cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap"
             onClick={props.clickHandler}
           >
             {props.title}
           </p>
 
           <div className="flex items-center justify-between">
-            <span className="mt-4 text-sm font-bold text-gray-900 dark:text-white mr-3">
+            <span className="mt-4 text-sm font-bold text-white dark:text-white mr-3">
               ${props.price}
             </span>
             <Button

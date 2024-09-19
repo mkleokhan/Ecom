@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gray-800">
+      <nav className="bg-blue-900  lg:px-14  w-full">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-14">
             <div className="flex-1 flex items-center justify-start">
@@ -120,7 +120,7 @@ const Navbar = () => {
                       navigate("/cart");
                     }}
                   >
-                    <FaShoppingCart size={25} />
+                    <FaShoppingCart size={25} color="white" />
                     {totalQuantity > 0 && (
                       <span className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">
                         {totalQuantity}
@@ -129,6 +129,7 @@ const Navbar = () => {
                   </Button>
                 </div>
                 <Button
+                  className="sm:px-0 py-0"
                   variant="contained"
                   sx={{ fontWeight: "bold" }}
                   onClick={() => {
@@ -148,7 +149,7 @@ const Navbar = () => {
                     navigate("/cart");
                   }}
                 >
-                  <FaShoppingCart size={25} />
+                  <FaShoppingCart size={25} color="white" />
                   {totalQuantity > 0 && (
                     <span className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">
                       {totalQuantity}
@@ -252,6 +253,7 @@ const Navbar = () => {
               </Link>
 
               <Button
+                className="sm:py-0 sm:px-0"
                 variant="contained"
                 sx={{ fontWeight: "bold" }}
                 onClick={() => {

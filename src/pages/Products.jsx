@@ -33,9 +33,6 @@ const Products = () => {
     });
     setSearchResults(results);
   };
-  const handleAddToCart = (products) => {
-    dispatch(addToCart(products)); // Dispatch add to cart action
-  };
 
   useEffect(() => {
     fetchProducts();
